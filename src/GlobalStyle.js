@@ -38,4 +38,12 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+tr, td {
+  
+  padding: 0;
+  
+
+  /* outline: 1px solid yellow */
+}
 `;

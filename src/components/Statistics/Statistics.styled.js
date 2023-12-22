@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
-import data from "../../data.json";
-
-// switch (backgroundColor);
 export const StatsCardStyled = styled.div`
   width: 300px;
   /* height: 500px; */
@@ -25,7 +22,6 @@ export const TitleStyled = styled.h2`
 
 export const ListStyled = styled.ul`
   display: flex;
-  /* flex-grow: 1; */
 
   margin-top: 20px;
 `;

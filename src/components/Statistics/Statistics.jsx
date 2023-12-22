@@ -8,9 +8,6 @@ import {
 } from "components/Statistics/Statistics.styled";
 
 const Statistics = ({ statistics, title }) => {
-  const { id, label, percentage } = statistics;
-
-  // const backgroundColor =
   const getColor = (label) => {
     switch (label) {
       case ".docx":
@@ -33,14 +30,11 @@ const Statistics = ({ statistics, title }) => {
     }
   };
 
-  // console.log(getColor(".docx"));
-
   return (
     <StatsCardStyled>
       {title && <TitleStyled>{title.toUpperCase()}</TitleStyled>}
       <ListStyled>
         {statistics.map((i) => {
-          // console.log(i.label);
           return (
             <ItemStyled key={i.id} color={getColor(i.label)}>
               <p>{i.label}</p>

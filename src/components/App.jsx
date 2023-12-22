@@ -5,15 +5,15 @@ import Layout from "./Layout/Layout";
 import Profile from "./Profile/Profile";
 import Statistics from "./Statistics/Statistics";
 import FriendList from "./FriendList/FriendList";
+import TransactionHistory from "./TransactionHistory/TransactionHistory";
 
 import user from "../../src/user.json";
 import statistics from "../../src/data.json";
 import friends from "../../src/friends.json";
+import transactions from "../../src/transactions.json";
 
 function App() {
   const { username, tag, location, avatar, stats } = user;
-  const { id, label, percentage } = statistics;
-  const { foto, name, isOnline, number } = friends;
 
   return (
     <Layout>
@@ -33,6 +33,7 @@ function App() {
         title="Uploud stats"
       />
       <FriendList friends={friends} />
+      <TransactionHistory transactions={transactions} />
     </Layout>
   );
 }
@@ -60,6 +61,16 @@ FriendList.propTypes = {
       name: PropTypes.string.isRequired,
       isOnline: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
       number: PropTypes.number.isRequired,
+    })
+  ),
+};
+TransactionHistory.propTypes = {
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
     })
   ),
 };

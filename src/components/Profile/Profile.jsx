@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import Description from "components/Description/Description";
 import Stats from "components/Stats/Stats";

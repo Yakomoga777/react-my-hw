@@ -4,13 +4,16 @@ import PropTypes from "prop-types";
 import Layout from "./Layout/Layout";
 import Profile from "./Profile/Profile";
 import Statistics from "./Statistics/Statistics";
+import FriendList from "./FriendList/FriendList";
 
 import user from "../../src/user.json";
 import statistics from "../../src/data.json";
+import friends from "../../src/friends.json";
 
 function App() {
   const { username, tag, location, avatar, stats } = user;
   const { id, label, percentage } = statistics;
+  const { foto, name, isOnline, number } = friends;
 
   return (
     <Layout>
@@ -29,6 +32,7 @@ function App() {
         statistics={statistics}
         title="Uploud stats"
       />
+      <FriendList friends={friends} />
     </Layout>
   );
 }
@@ -48,6 +52,16 @@ Statistics.propTypes = {
     })
   ).isRequired,
   title: PropTypes.string,
+};
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      foto: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+      number: PropTypes.number.isRequired,
+    })
+  ),
 };
 
 export default App;

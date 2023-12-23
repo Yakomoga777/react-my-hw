@@ -35,6 +35,4 @@ export const StyledSection = styled.main`
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
-
-  outline: 1px solid yellow;
 `;
